@@ -14,22 +14,22 @@ jobs:
           k8s-url: https://3.133.101.113:6443     # Replace this IP address with the results of curl http://checkip.amazonaws.com
           k8s-secret: |                           # Replace the example secret below with the secret from your cluster
             apiVersion: v1
-            data:
-              ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0 ...
-              namespace: ZGVmYXVsdA==
-              token: ZXlKaGJHY2lPaUpTVXpJMU5pSXN ...
-            kind: Secret
-            metadata:
-              annotations:
-                kubectl.kubernetes.io/last-applied-configuration: |
-                  {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{"kubernetes.io/service-account.name":"gha"},"name":"gha-sa-secret","namespace":"default"},"type":"kubernetes.io/service-account-token"}
-                kubernetes.io/service-account.name: gha
-                kubernetes.io/service-account.uid: d0c5e291-b28d-4a20-bdfd-dd194e9cb5da
-              creationTimestamp: "2024-10-04T16:34:47Z"
-              name: gha-sa-secret
-              namespace: default
-              resourceVersion: "854"
-              uid: 03bc5502-3bc5-4f56-a180-b5d104eb9e9f
+              data:
+                ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJU21BUHBxYzI2bjh3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRFd01EUXhOakkyTkRCYUZ3MHpOREV3TURJeE5qTXhOREJhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURUWVBlelFqYVJvYkZ3RDJJdk1lNnA5TVBWRkF6ZUFnVHZMNkJ6OGQ2K2U0Z1QrTERJTmt1UDVmc2oKTUtCc1FMMXo0RXZVQWpDeWwrTmlVelBnUDdtTTJ5OTlmWUVnTEh3MitMTmRlWUdjemdIUEMzT3ZTMmZobk5IVQpBcHBEdlptWmh3cXlzMmdkaEFIcnB1Y2UrZmVPREhxV2Z0QUE5VkR5alJueGdrOU9jY2lkanNHVzlFdlk1RVFqCm14dHdMVmJCNThBMEd1NUZZWXFTU2VMUjVQWXlpcVdTNEpvdGc4VFQ0dTFzRE9WU0hiMitQbXA5a1lTcjhMbVcKU003VldjR0taTmZlTlRkOHdnWDEzN09qOGZiYTMrWHNydHlrOVZVQ2JDdXNMV2dpNVJFanNNRDlaK2tjSUh1eAoybUZrMGxoSDdnODZWc2hDenRDMjI4MjhnUGxOQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJRN3VSVzQwUkJQOVJXWXVhK0hrdHdjUmNXUEl6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ2gwbFB4TmtqMgpvSXNla0xXTkdnaVEyUnpQdE9CMDJERTBTNTJYTVdVeGxMU0svcEk5OFVHdlVCZUhxU24xNVNHeDFhaVdaVEZ3CkVLV0NhSlp5VFJwQldsRG5rV3hvTXNNS2d2OWcrV2txTkJDb3lCNVE2enZueUpCNXQvczFYZ0ZMOHlPTWRuM00KdjcxVzZoM25hRVFveE5JVUR4RjdkZ1hMVXlVSEdYUytwNktyMUUyV0F1KzdYKzVUKzdBRnpJZ0lrd2FTL0lhKwp2OXRKYmxhc0xEdHpsRkk4NGQzZVBYK05wNmhCczlMd1lBbVhrU2swSUJINWNFOWxtRjUySjFOL2lLbkJYM3lMCnd6Q1o1djhyc0E1ekdLMGFSMEpYWDZLNDh2TTZZZ0VxbkpLMSszbGFLdmxzN3M5STRYNExFeVM3MXkxK1lFVjMKQnQzc25kV0ZCL0VXCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+                namespace: ZGVmYXVsdA==
+                token: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklqQkRNa0kyVTFZdFZsY3llVmxXTFVOTmFtWldYM1U1TTBkVVRXUlpVV015TVRkSFdrWmxRbDlKVVZFaWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUprWldaaGRXeDBJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpXTnlaWFF1Ym1GdFpTSTZJbWRvWVMxellTMXpaV055WlhRaUxDSnJkV0psY201bGRHVnpMbWx2TDNObGNuWnBZMlZoWTJOdmRXNTBMM05sY25acFkyVXRZV05qYjNWdWRDNXVZVzFsSWpvaVoyaGhJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpYSjJhV05sTFdGalkyOTFiblF1ZFdsa0lqb2laREJqTldVeU9URXRZakk0WkMwMFlUSXdMV0prWm1RdFpHUXhPVFJsT1dOaU5XUmhJaXdpYzNWaUlqb2ljM2x6ZEdWdE9uTmxjblpwWTJWaFkyTnZkVzUwT21SbFptRjFiSFE2WjJoaEluMC5wMmU3NmlTV013YWd5R1FILWs0d0phMWxLNmlRRTluNjQzUk90OHRnYlZuMzJKMDJLZmVoSW81TThFS3dwRnJDbjVrNDNVNWpWM21PS01EcUF2NS1UZXplUzlvYWhPLTRlTUt5TWw2eXNCNEJTTXU0QmVza0dQZHpsekhUTG9wdkRnbEVwaHl0VkxoZVdjak90R0F2aW8wbERreS0yWkdKQm96NGMyQTVOd05BdGxfQXFlLUxOb2VwQ3pmdGdsSG91bW5XanUxZWNqV1oydnhEUm9HeFQwVm9CaXdDaWh6ODNGaGVDQXdHWHRES0c2TV9KYXA0aGFTbkJvZFJIa3F1NVNNU0dDenhJb1l2Z29CVkI5V05RalUyQWQ1SjhZQVV4M0xVVTdSeVhfRER4RHN6b0dXVDN5eXZhbUNWalVaQ1FCZGRPb2YwMVM1clBOSUI0SXlNdlE=
+              kind: Secret
+              metadata:
+                annotations:
+                  kubectl.kubernetes.io/last-applied-configuration: |
+                    {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{"kubernetes.io/service-account.name":"gha"},"name":"gha-sa-secret","namespace":"default"},"type":"kubernetes.io/service-account-token"}
+                  kubernetes.io/service-account.name: gha
+                  kubernetes.io/service-account.uid: d0c5e291-b28d-4a20-bdfd-dd194e9cb5da
+                creationTimestamp: "2024-10-04T16:34:47Z"
+                name: gha-sa-secret
+                namespace: default
+                resourceVersion: "854"
+                uid: 03bc5502-3bc5-4f56-a180-b5d104eb9e9f
            type: kubernetes.io/service-account-token
       - name: Get pods
         run: kubectl get pods -n default
