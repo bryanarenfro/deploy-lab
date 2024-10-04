@@ -30,6 +30,6 @@ jobs:
                 namespace: default
                 resourceVersion: "854"
                 uid: 03bc5502-3bc5-4f56-a180-b5d104eb9e9f
-           type: kubernetes.io/service-account-token
+          type: kubernetes.io/service-account-token
       - name: Get pods
         run: kubectl get pods -n default
